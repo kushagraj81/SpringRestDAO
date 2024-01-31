@@ -38,9 +38,11 @@ public class JokeController {
         }
         return arr.get(jokeid);
     }
+//to handle all exception
 
     @ExceptionHandler
-    public ResponseEntity<Object> throwArraySizeException(ArraySizeException exc)
+    public ResponseEntity<Object> throwArraySizeException(Exception exc)
+//    public ResponseEntity<Object> throwArraySizeException(ArraySizeException exc)
     {
         return new ResponseEntity<>(exc.getMessage(), HttpStatus.NOT_FOUND);
     }
